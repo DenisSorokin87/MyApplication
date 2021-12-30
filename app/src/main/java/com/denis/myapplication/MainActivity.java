@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
     public void goToSecondPage(View view){
         Intent intent = new Intent("com.denis.myapplication.secondActivity");
         startActivity(intent);
-
     }
 
     @SuppressLint("NonConstantResourceId")
