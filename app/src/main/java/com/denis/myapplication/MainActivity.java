@@ -61,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
     };
 
 
+
+
+
     private void showFragment(@NonNull Class<? extends Fragment> fragmentClass) {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container_view, fragmentClass, null)
