@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Nav_Home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home"
+        />
+    <item
+        android:id="@+id/Nav_Fav"
+        android:icon="@drawable/ic_baseline_favorite_border_24"
+        android:title="Favorite"
+        />
+    <item
+        android:id="@+id/Nav_Search"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="Search"
+        />
+    <item
+        android:id="@+id/Nav_To_Second_Page"
+        android:icon="@drawable/ic_baseline_navigate_next_24"
+        android:title="Next Page"
+        />
+
+
+
+</menu>

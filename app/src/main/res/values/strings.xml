@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title_activity_second">second_activity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="worker_title">Worker Info</string>
+    <string name="first_name">First Name: </string>
+    <string name="last_name">Last Name: </string>
+    <string name="birthday">Birthday: </string>
+    <string name="worker_specialties">Specialties</string>
+    <string name="user_tasks">Tasks</string>
+    <string name="user_title">User Info</string>
+</resources>
