@@ -60,14 +60,12 @@ public class MainActivity extends AppCompatActivity {
         return true;
     };
 
-
     private void showFragment(@NonNull Class<? extends Fragment> fragmentClass) {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container_view, fragmentClass, null)
                 .addToBackStack(null)
                 .commit();
     }
-
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
