@@ -2,16 +2,13 @@
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
-import com.denis.myapplication.Adapters.PageViewAdapter;
+import com.denis.myapplication.adapters.PageViewAdapter;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
     public class secondActivity extends AppCompatActivity {
 

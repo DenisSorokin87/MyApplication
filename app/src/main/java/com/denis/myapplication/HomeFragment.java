@@ -10,10 +10,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.denis.myapplication.Adapters.WorkersResponseAdapter;
-import com.denis.myapplication.data.Speciality;
+import com.denis.myapplication.adapters.WorkersResponseAdapter;
 import com.denis.myapplication.data.User;
-import com.denis.myapplication.data.Worker;
 import com.denis.myapplication.data.WorkersListResponse;
 import com.denis.myapplication.network.GetDataService;
 import com.denis.myapplication.network.GetUsersFromMyJavaApp;
@@ -21,7 +19,6 @@ import com.denis.myapplication.network.RetrofitClientInstance;
 import com.denis.myapplication.network.RetrofitUsersInstance;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;

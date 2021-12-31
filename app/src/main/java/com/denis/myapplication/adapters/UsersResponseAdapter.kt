@@ -1,4 +1,4 @@
-package com.denis.myapplication.Adapters
+package com.denis.myapplication.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -34,17 +34,12 @@ class UsersResponseAdapter(var context: Context, var userList: List<User?>? = em
             getUserTasks(userList!![position])
         )
         holder.tasksList.adapter = strTaskList
-
-
     }
 
     private fun getUserTasks(user: User?): ArrayList<String> {
         val tDb: AppTaskDataBase = MyApplication.instance.appTaskDataBase
-//        val utDB: AppUserTasksDataBase = MyApplication.instance.userTasksDataBase
         val taskDao: TaskEntityDao = tDb.getTaskEntityDao()
-//        val userTasksDao: UserTasksEntityDao = utDB.getUserTasksEntityDao()
 
-//        println(userDao.getUserTasks())
         val strTaskList = ArrayList<String>()
         if(user != null){
             val userTasks: List<TaskEntity> = tDb.getTaskEntityDao().getAllUserTasks(user.id)
@@ -52,33 +47,17 @@ class UsersResponseAdapter(var context: Context, var userList: List<User?>? = em
                 strTaskList.add(it!!.description +" - "+ it.date) }
             }
         return strTaskList;
+
         }
-
-
-
-
-//        if (user != null) {
-//            val userTasks: List<UserTasksEntity>? = userTasksDao.getByUserId(user.id)
-//            userTasks?.forEach {
-//                val task = taskDao.getById(it.taskId)
-//                strTaskList.add(task!!.description +" - "+ task.date) }
-//
-//        }
-//        return strTaskList;
-//    }
-
     override fun getItemCount(): Int {
         return userList!!.size
     }
-
 
     class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var cardView: CardView = itemView.findViewById(R.id.card_view)
         var firstName: TextView = itemView.findViewById(R.id.worker_first_name)
         var lastName: TextView = itemView.findViewById(R.id.worker_last_name)
         var tasksList: ListView = itemView.findViewById(R.id.user_tasks_list)
-
-
     }
 }
 

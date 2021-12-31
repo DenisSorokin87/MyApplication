@@ -1,4 +1,4 @@
-package com.denis.myapplication.Adapters;
+package com.denis.myapplication.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

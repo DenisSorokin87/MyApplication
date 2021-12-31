@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.denis.myapplication.data.User
-import com.denis.myapplication.Adapters.UsersResponseAdapter
+import com.denis.myapplication.adapters.UsersResponseAdapter
 import com.denis.myapplication.dao.*
 import com.denis.myapplication.data.Task
 import retrofit2.Call
@@ -31,9 +31,6 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
         uResponseAdapter = UsersResponseAdapter(requireActivity())
         userRecycler?.adapter = uResponseAdapter
 
-
-//        val userApiInterface = UserInterface.create().getUsersFromJavaApp()
-
         val userService = MyApplication.getInstance().usersRetrofit
         val userCall = userService.getUsersFromJavaApp()
         userCall?.enqueue(object : Callback<ArrayList<User?>> {
@@ -43,17 +40,13 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
 
                     val uDb: AppDataBase = MyApplication.instance.database
                     val tDb: AppTaskDataBase = MyApplication.instance.appTaskDataBase
-                    val utDB: AppUserTasksDataBase = MyApplication.instance.userTasksDataBase
                     val userDao: UserEntityDao = uDb.getUserEntityDao()
                     val taskDao: TaskEntityDao = tDb.getTaskEntityDao()
-                    val userTasksDao: UserTasksEntityDao = utDB.getUserTasksEntityDao()
                     userDao.cleanSchema()
                     taskDao.cleanSchema()
-                    userTasksDao.cleanSchema()
 
                     var user: UserEntity
                     var task: TaskEntity
-                    var userTasks: UserTasksEntity
                     if (response.body() != null) {
                         response.body()!!.forEach {
                             if (it != null) {
@@ -62,15 +55,12 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
                                     if (userTask != null){
                                         task = TaskEntity(userTask.id, userTask.taskDescription, userTask.taskDate, it.id)
                                         taskDao.insert(task)
-                                        userTasks = UserTasksEntity(it.id, userTask.id)
-                                        userTasksDao.insert(userTasks)
                                     }
                                 }
                                 userDao.insert(user)
                             }
                         }
                     }
-
 
                     setUserRecycler(changeFromUserEntityToUSer(userDao.getAll()))
 
@@ -110,10 +100,6 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
                     println(t.cause)
                 }
             })
-
-
-
-
     }
 
     private fun changeFromUserEntityToUSer(dbResponse: List<UserEntity>): List<User?>? {
