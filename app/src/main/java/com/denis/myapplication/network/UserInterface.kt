@@ -20,22 +20,6 @@ interface UserInterface {
     @POST("/MavenFisrtMeeting-1.0/rest/test")
     fun sendUser(@Body user: User?): Call<ArrayList<String?>?>?
 
-//    companion object {
-//
-//        private const val BASE_URL = "http://10.0.2.2:8080"
 
-//        fun create() : UserInterface {
-//
-//            val gson = GsonBuilder()
-//                    .setLenient()
-//                    .create()
-//
-//            val retrofit = Retrofit.Builder()
-//                    .addConverterFactory(GsonConverterFactory.create(gson))
-//                    .baseUrl(BASE_URL)
-//                    .build()
-//            return retrofit.create(UserInterface::class.java)
-//        }
-//    }
 }
 

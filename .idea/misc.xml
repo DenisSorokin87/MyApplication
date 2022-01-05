@@ -22,11 +22,14 @@
         <entry key="..\:/Adnroid/MyApplication/app/src/main/res/menu/main_page_bottom_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Adnroid/MyApplication/app/src/main/res/menu/second_page_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/MyApplication/app/src/main/res/layout/Users.xml" value="0.36666666666666664" />
+        <entry key="..\:/MyApplication/app/src/main/res/layout/users.xml" value="0.5" />
+        <entry key="..\:/MyApplication/app/src/main/res/layout/worker_item.xml" value="0.20520833333333333" />
+        <entry key="..\:/MyApplication/app/src/main/res/layout/workers.xml" value="0.20520833333333333" />
         <entry key="..\:/Other computers/My Laptop (1)/Adnroid/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

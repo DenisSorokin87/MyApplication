@@ -34,6 +34,7 @@ public class MyApplication extends Application {
 
         gson = new GsonBuilder()
                 .setLenient()
+
                 .create();
 
         retrofit = new Retrofit.Builder()
