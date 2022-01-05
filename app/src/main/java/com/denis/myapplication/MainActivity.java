@@ -3,7 +3,6 @@ package com.denis.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
 //           showFragment(FirstFragment.class);
 
         }
-
         bottomNav = findViewById(R.id.bottomNavigationView);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
     }
@@ -34,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void showFirstFragment(){ showFragment(HomeFragment.class);}
     public void showThirdFragment(){ showFragment(SearchFragment.class);}
-    public void showSecondFragment(){ showFragment(FavoriteFragment.class);}
+    public void showSecondFragment(){ showFragment(ContactsFavorites.class);}
 
     public void goToSecondPage(View view){
         Intent intent = new Intent("com.denis.myapplication.secondActivity");

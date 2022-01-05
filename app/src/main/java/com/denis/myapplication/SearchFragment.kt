@@ -1,6 +1,7 @@
 package com.denis.myapplication
 
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -114,6 +115,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
         return usersList
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun setUserRecycler(userslist: List<User?>?) {
 
         uResponseAdapter?.userList = userslist
