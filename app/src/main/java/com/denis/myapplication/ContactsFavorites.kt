@@ -77,22 +77,6 @@ class ContactsFavorites : Fragment(R.layout.fragment_contacts) {
         val cAdapter: ArrayAdapter<String> = ArrayAdapter(requireActivity(), R.layout.contact_item, contacts)
         contactsList.adapter = cAdapter
 
-
-
-//        val contactsFromPhone = listOf(
-//            ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
-//            ContactsContract.CommonDataKinds.Phone.NUMBER,
-//            ContactsContract.CommonDataKinds.Phone._ID
-//        ).toTypedArray()
-//        val cursor: Cursor? = requireActivity().contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-//                                null, null, null, null)
-//        requireActivity().startManagingCursor(cursor)
-//
-//        val contacstToList = intArrayOf(android.R.id.text1, android.R.id.text2)
-//        val simple: SimpleCursorAdapter = SimpleCursorAdapter(requireActivity(),android.R.layout.simple_list_item_2, cursor, contactsFromPhone, contacstToList )
-//
-//        contactsList.adapter = simple
-
     }
 }
 
