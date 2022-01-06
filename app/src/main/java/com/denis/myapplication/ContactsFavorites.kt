@@ -45,13 +45,13 @@ class ContactsFavorites : Fragment(R.layout.fragment_contacts) {
     }
 
     private fun addListenerOnListView() {
-        contactsList.onItemClickListener = OnItemClickListener { parent, view, position, id ->
-           var contact =parent.getItemAtPosition(position)
-            val intent = Intent(Intent.ACTION_DIAL)
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            Uri.parse("tel" + CharMatcher.digit().retainFrom(contact.toString()))
-            requireActivity().startActivity(intent)
-        }
+//        contactsList.onItemClickListener = OnItemClickListener { parent, view, position, id ->
+//           var contact =parent.getItemAtPosition(position)
+//            val intent = Intent(Intent.ACTION_DIAL)
+//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+//            Uri.parse("tel" + CharMatcher.digit().retainFrom(contact.toString()))
+//            requireActivity().startActivity(intent)
+//        }
     }
 
 
@@ -72,25 +72,20 @@ class ContactsFavorites : Fragment(R.layout.fragment_contacts) {
 
     private fun readContacts() {
 
-        val contacts = arrayListOf<String>("First Contact - 054-5674567", "Second Contact - 0544555600")
-        val cAdapter: ArrayAdapter<String> = ArrayAdapter(requireActivity(), R.layout.contact_item, contacts)
-        contactsList.adapter = cAdapter
 
+        val contactsFromPhone = listOf(
+            ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
+            ContactsContract.CommonDataKinds.Phone.NUMBER,
+            ContactsContract.CommonDataKinds.Phone._ID
+        ).toTypedArray()
+        val cursor: Cursor? = requireActivity().contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+                                null, null, null, null)
+        requireActivity().startManagingCursor(cursor)
 
+        val contacstToList = intArrayOf(android.R.id.text1, android.R.id.text2)
+        val simple: SimpleCursorAdapter = SimpleCursorAdapter(requireActivity(),android.R.layout.simple_list_item_2, cursor, contactsFromPhone, contacstToList )
 
-//        val contactsFromPhone = listOf(
-//            ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
-//            ContactsContract.CommonDataKinds.Phone.NUMBER,
-//            ContactsContract.CommonDataKinds.Phone._ID
-//        ).toTypedArray()
-//        val cursor: Cursor? = requireActivity().contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-//                                null, null, null, null)
-//        requireActivity().startManagingCursor(cursor)
-//
-//        val contacstToList = intArrayOf(android.R.id.text1, android.R.id.text2)
-//        val simple: SimpleCursorAdapter = SimpleCursorAdapter(requireActivity(),android.R.layout.simple_list_item_2, cursor, contactsFromPhone, contacstToList )
-//
-//        contactsList.adapter = simple
+        contactsList.adapter = simple
 
     }
 }
