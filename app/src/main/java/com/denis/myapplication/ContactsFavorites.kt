@@ -43,7 +43,17 @@ class ContactsFavorites : Fragment(R.layout.fragment_contacts) {
             ActivityCompat.requestPermissions(
                 requireActivity(), arrayOf(Manifest.permission.READ_CONTACTS), REQUEST_CODE_PERMISSION_READ_CONTACTS)
         }
+        addListenerOnListView()
+    }
 
+    private fun addListenerOnListView() {
+        contactsList.onItemClickListener = OnItemClickListener { parent, view, position, id ->
+           var contact =parent.getItemAtPosition(position)
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            Uri.parse("tel" + CharMatcher.digit().retainFrom(contact.toString()))
+            requireActivity().startActivity(intent)
+        }
     }
 
     override fun onRequestPermissionsResult(
