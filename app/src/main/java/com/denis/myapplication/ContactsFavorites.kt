@@ -47,8 +47,10 @@ class ContactsFavorites : Fragment(R.layout.fragment_contacts) {
     private fun addListenerOnListView() {
         contactsList.onItemClickListener = OnItemClickListener { parent, view, position, id ->
            var contact =parent.getItemAtPosition(position)
-            val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel" + CharMatcher.digit().retainFrom(contact.toString())))
-//            startActivity(intent)
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            Uri.parse("tel" + CharMatcher.digit().retainFrom(contact.toString()))
+            requireActivity().startActivity(intent)
         }
     }
 
