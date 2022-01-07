@@ -79,8 +79,8 @@ class ContactsFragment : Fragment(R.layout.fragment_contacts) {
 //    private fun addListenerOnListView() {
 //        contactsList.onItemClickListener =
 //            AdapterView.OnItemClickListener { parent, view, position, id ->
-//                var contact = parent.getItemAtPosition(position)
-//                println((contact as ContentResolver))
+//                var contact = parent.getChildAt(position)
+//                println(contact.get)
 //
 //                val intent = Intent(Intent.ACTION_DIAL)
 //                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
