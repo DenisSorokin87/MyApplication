@@ -1,28 +1,19 @@
 package com.denis.myapplication
 
 import android.Manifest
-import android.content.ContentResolver
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.database.Cursor
-import android.net.Uri
 import android.os.Bundle
-import android.view.View
-import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
-import androidx.core.app.ActivityCompat
 import android.provider.ContactsContract
-import android.widget.AdapterView
-import android.widget.AdapterView.OnItemClickListener
-import android.widget.ArrayAdapter
+import android.view.View
 import android.widget.ListView
 import android.widget.SimpleCursorAdapter
-import androidx.core.view.get
-import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.base.CharMatcher
-import kotlinx.coroutines.NonDisposableHandle
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 
 
-class ContactsFavorites : Fragment(R.layout.fragment_contacts) {
+class ContactsFragment : Fragment(R.layout.fragment_contacts) {
 
     val REQUEST_CODE_PERMISSION_READ_CONTACTS: Int = 1
     private lateinit var contactsList: ListView

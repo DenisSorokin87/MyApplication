@@ -19,7 +19,7 @@ import java.util.ArrayList;
         setContentView(R.layout.activity_second);
         ArrayList<Fragment> fragments = new ArrayList<Fragment>();
         fragments.add(new HomeFragment());
-        fragments.add(new ContactsFavorites());
+        fragments.add(new ContactsFragment());
         fragments.add(new SearchFragment());
         ViewPager2 viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(new PageViewAdapter(this, fragments));
